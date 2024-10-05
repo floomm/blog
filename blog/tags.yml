@@ -1,0 +1,9 @@
+ctf:
+  label: CTF
+  permalink: /ctf
+  description: Here you can find my public CTF Writeups.
+
+webdev:
+  label: WebDev
+  permalink: /webdev
+  description: Here you can find my blogs about developing websites and web applications.
