@@ -57,6 +57,10 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+      require.resolve('./plugins/colorModeSync')
+  ],
+
   themeConfig: {
     navbar: {
       title: 'Home',
@@ -79,7 +83,9 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     colorMode: {
-      disableSwitch: false
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     }
   } satisfies Preset.ThemeConfig,
 };
