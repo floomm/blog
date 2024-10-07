@@ -14,7 +14,7 @@ module.exports = function (context, options) {
         localStorage.setItem('theme', mode);
         
         window.addEventListener('DOMContentLoaded', function() {
-            var themeToggle = document.querySelector('.theme-toggle');
+            var themeToggle = document.querySelector('[class^="toggleButton_"]');
             if (themeToggle) {
                 themeToggle.addEventListener('click', function() {
                     var currentMode = document.documentElement.getAttribute('data-theme');
