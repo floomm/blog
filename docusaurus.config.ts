@@ -65,13 +65,13 @@ const config: Config = {
     navbar: {
       title: 'Home',
       logo: {
-        alt: 'Arrow Left',
-        src: 'img/fa6-arrow-left.svg',
-        srcDark: 'img/fa6-arrow-left-dark.svg',
+        alt: 'Portrait',
+        src: 'img/portrait.jpg',
         href: isDev  ? devUrl : prodUrl,
         target: '_self',
-        width: 24,
-        height: 24,
+        width: 32,
+        height: 32,
+        style: {borderRadius: '50%'},
       },
     },
     footer: {
