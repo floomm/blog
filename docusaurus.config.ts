@@ -2,11 +2,15 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const isDev = process.env.NODE_ENV === 'development';
+const prodUrl = 'https://flum.tech';
+const devUrl = 'http://localhost:5173'
+
 const config: Config = {
-  title: 'Silvan\'s Docusaurus',
+  title: 'Silvan Flum',
 
   // Set the production url of your site here
-  url: 'https://flum.tech/',
+  url: prodUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/docs/',
@@ -54,6 +58,18 @@ const config: Config = {
   ],
 
   themeConfig: {
+    navbar: {
+      title: 'Home',
+      logo: {
+        alt: 'Arrow Left',
+        src: 'img/fa6-arrow-left.svg',
+        srcDark: 'img/fa6-arrow-left-dark.svg',
+        href: isDev  ? devUrl : prodUrl,
+        target: '_self',
+        width: 24,
+        height: 24,
+      },
+    },
     footer: {
       style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} Silvan Flum`,
@@ -63,7 +79,7 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     colorMode: {
-      disableSwitch: true
+      disableSwitch: false
     }
   } satisfies Preset.ThemeConfig,
 };
