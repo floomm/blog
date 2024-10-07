@@ -14,17 +14,20 @@ module.exports = function (context, options) {
         localStorage.setItem('theme', mode);
         
         window.addEventListener('DOMContentLoaded', function() {
-            var themeToggle = document.querySelector('[class^="toggleButton_"]');
+            var themeToggle = document.querySelector('.toggleButton_gllP');
             if (themeToggle) {
                 themeToggle.addEventListener('click', function() {
                     var currentMode = document.documentElement.getAttribute('data-theme');
                     var newMode = currentMode === 'dark' ? 'light' : 'dark';
                     localStorage.setItem('chakra-ui-color-mode', newMode);
+                    console.log('Updated theme to: ' + newMode);
                 });
+            } else {
+                console.error('Could not find theme toggle button');
             }
         });
     } catch (e) {
-        console.error('Error setting color mode:', e);
+        console.error('Error setting theme:', e);
     }
 })();
 `,
